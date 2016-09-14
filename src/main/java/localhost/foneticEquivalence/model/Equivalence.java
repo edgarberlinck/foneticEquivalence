@@ -18,11 +18,13 @@ public class Equivalence {
 	}
 	
 	public static boolean isEquivalent(String value1, String value2) {
-		return instance.testEquivalence(value1, value2);
+		Word w1 = new Word(value1);
+		Word w2 = new Word(value2);
+		return Equivalence.isEquivalent(w1, w2);
 	}
 
 	public static boolean isEquivalent(Word word1, Word word2) {
-		return Equivalence.isEquivalent(word1.getValueToCompare(), word2.getValueToCompare());
+		return instance.testEquivalence(word1.getValueToCompare(), word2.getValueToCompare());
 	}
 	
 	private boolean testEquivalence(String value1, String value2) {
