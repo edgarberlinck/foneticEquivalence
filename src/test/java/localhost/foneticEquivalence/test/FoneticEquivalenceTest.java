@@ -11,7 +11,7 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-import localhost.foneticEquivalence.tools.Word;
+import localhost.foneticEquivalence.model.Word;
 
 public class FoneticEquivalenceTest {
 	List<String> dictionary = new ArrayList<>();
@@ -32,7 +32,7 @@ public class FoneticEquivalenceTest {
 		String argument = "1tom#";
 		Word word = new Word(argument);
 		String processedWord = word.getValueToCompare();
-		
+
 		assertTrue(processedWord.equals("tm"));
 	}
 	
