@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Equivalence {
 	private List<String[]> equivalenceList;
-	private Equivalence instance = new Equivalence();
+	private static Equivalence instance = new Equivalence();
 	
 	private Equivalence () {
 		this.equivalenceList = new ArrayList<>();
@@ -17,8 +17,23 @@ public class Equivalence {
 		equivalenceList.add(new String[] {"m", "n"});
 	}
 	
-	public static Boolean isEquivalent(String value1, String value2) {
-		//TODO
-		return false;
+	public static boolean isEquivalent(String value1, String value2) {
+		return instance.testEquivalence(value1, value2);
 	}
+
+	public static boolean isEquivalent(Word word1, Word word2) {
+		return Equivalence.isEquivalent(word1.getValueToCompare(), word2.getValueToCompare());
+	}
+	
+	private boolean testEquivalence(String value1, String value2) {
+		System.out.println("Testing equivalence: "+value1 + " | "+value2);
+		/**
+		 * Para cada letra testar o seguinte:
+		 * 	Se a respectiva letra em A é igual ou equivalente a B.
+		 * 	
+		 */
+		return true;
+	}
+	
+	
 }

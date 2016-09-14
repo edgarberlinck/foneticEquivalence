@@ -23,5 +23,4 @@ public class Word {
 	public String getValueToCompare () {
 		return this.valueToCompare;
 	}
-
 }

@@ -11,6 +11,7 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
+import localhost.foneticEquivalence.model.Equivalence;
 import localhost.foneticEquivalence.model.Word;
 
 public class FoneticEquivalenceTest {
@@ -36,10 +37,18 @@ public class FoneticEquivalenceTest {
 		assertTrue(processedWord.equals("tm"));
 	}
 	
-//	@Test
-//	public void loadWords () {
-//		arguments.forEach((arg) -> {
-//			
-//		});
-//	}
+	@Test
+	public void equivalenceText () {
+		Word word1 = new Word("1tom#");
+		Word word2 = new Word("Don");
+		
+		assertTrue(Equivalence.isEquivalent(word1, word2));
+		assertTrue(Equivalence.isEquivalent(word1, new Word("Tooonnnnyyyy")));
+		assertTrue(Equivalence.isEquivalent(new Word("brief"), new Word("brave")));
+		assertTrue(Equivalence.isEquivalent(new Word("brief"), new Word("Braev")));
+		assertTrue(Equivalence.isEquivalent(new Word("soon"), new Word("son")));
+		assertTrue(Equivalence.isEquivalent(new Word("soon"), new Word("sunny")));
+		assertTrue(Equivalence.isEquivalent(new Word("soon"), new Word("brave")));
+		
+	}
 }
