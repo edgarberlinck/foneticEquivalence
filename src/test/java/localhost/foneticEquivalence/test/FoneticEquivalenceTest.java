@@ -1,6 +1,6 @@
 package localhost.foneticEquivalence.test;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import java.io.File;
 import java.io.IOException;
@@ -49,6 +49,6 @@ public class FoneticEquivalenceTest {
 		assertTrue(Equivalence.isEquivalent(new Word("soon"), new Word("son")));
 		assertTrue(Equivalence.isEquivalent(new Word("soon"), new Word("sunny")));
 		assertTrue(Equivalence.isEquivalent(new Word("soon"), new Word("brave")));
-		
+		assertFalse(Equivalence.isEquivalent(new Word("edgar"), new Word("berlinck")));
 	}
 }
