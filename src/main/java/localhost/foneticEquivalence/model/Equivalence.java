@@ -63,8 +63,12 @@ public class Equivalence {
 					sb.setCharAt(i, equivalenceList.charAt(0));
 					sequentialEquivalenceFound = true;
 				} else {
-					sequentialEquivalenceFound = false;
+					if (sb == null)
+						sb = new StringBuilder(value);
+					sb.setCharAt(i, Character.MIN_VALUE);						
 				}
+			} else {
+				sequentialEquivalenceFound = false;
 			}
 		}
 		return sb != null? sb.toString() : value;
