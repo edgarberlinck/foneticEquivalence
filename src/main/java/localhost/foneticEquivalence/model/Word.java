@@ -11,9 +11,9 @@ public class Word {
 	private void processValue(String argument) {
 		 this.valueToCompare = argument.toLowerCase().replaceAll("[^a-z]", "");
 		 //TODO Encontrar uma expressão regular para evitar esse subtring
-		 String first = this.valueToCompare.substring(0, 1);
-		 this.valueToCompare = this.valueToCompare.replaceAll("[a,e,i,h,o,u,w,y]+", "");	
-		 this.valueToCompare = first + this.valueToCompare;
+		 //String first = this.valueToCompare.substring(0, 1);
+		 this.valueToCompare = this.valueToCompare.substring(0, 1) + this.valueToCompare.replaceAll(".[a,e,i,h,o,u,w,y]+", "");	
+		 //this.valueToCompare = first + this.valueToCompare;
 	}
 
 	public String getValue() {
