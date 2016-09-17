@@ -71,6 +71,6 @@ public class Equivalence {
 				sequentialEquivalenceFound = false;
 			}
 		}
-		return sb != null? sb.toString() : value;
+		return sb != null? sb.toString().trim() : value;
 	}
 }
