@@ -29,22 +29,6 @@ public class Equivalence {
 	}
 
 	private boolean testEquivalence(String value1, String value2) {
-		System.out.println("Testing equivalence: " + value1 + " | " + value2);
-		/*
-			1 - Verificar se a palavra possui uma ou mais letras consecutivas pertencentes ao
-			mesmo grupo e remover caso encontre.
-				1.1 - Neste passo eu posso alterar as palavras para que qualquer letra
-				pertencente a algum conjunto de equivalencias receba um valor único, assim
-				posso verificar a equivalencia com o equals, conforme passo 3.
-			
-			2 - Caso exista alguma letra que não esteja em nenhum dos conjuntos descartar qualquer
-			possibilidade de equivalência com qualquer palavra
-			
-			3 - Palavras iguais são equivalentes
-								
-		*/
-		
-		//Passo 1
 		for (String equivalence : equivalenceList) {
 			value1 = zip(value1, equivalence);
 			value2 = zip(value2, equivalence);

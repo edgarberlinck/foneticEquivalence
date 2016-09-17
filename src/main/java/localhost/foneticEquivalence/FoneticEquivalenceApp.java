@@ -1,9 +1,13 @@
 package localhost.foneticEquivalence;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import localhost.foneticEquivalence.model.Equivalence;
 
@@ -22,13 +26,30 @@ public class FoneticEquivalenceApp {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		if (args.length < 2)
+			throw new IllegalArgumentException("Invalid number of arguments provided.");
+		
+		List<String> argumentList = new ArrayList<>();
+		List<String> dictionary = new ArrayList<>();
+				
+		for (int i=0; i< args.length-1; i++)
+			argumentList.add(args[i]);
+		
+		File file = new File(args[args.length-1]);
+		try {
+			Files.lines(file.toPath()).forEach((word) -> dictionary.add(word) );
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		FoneticEquivalenceApp app = new FoneticEquivalenceApp(argumentList, dictionary);
+		app.showEquivalentWords();
 	}
 
 	public void showEquivalentWords() {
-		// TODO Auto-generated method stub
-		
+		for (Entry<String, List<String>> entry : foneticEquivalence.entrySet()) {
+			System.out.println(String.format("%s: %s", entry.getKey(), entry.getValue().toString()));			
+		}
 	}
 
 }
