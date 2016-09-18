@@ -19,7 +19,7 @@ Remember that you can download the latest version [here. ](https://github.com/ed
 
 ## Using
 
-First of all, you have to create a dictionary file. This file must be a simple text file and each word should be place on it\`s own line. If you want to put the words: angel, brave, Braev, Don, Engel, go, goal, son, sunny, Tom and Tooonnnnyyyy to your dictionary you should create a text file and place each of those words on it. You disctioary file must look like this:
+First of all, you have to create a dictionary file. This file must be a simple text file and each word should be place on it\`s own line. If you want to put the words: angel, brave, Braev, Don, Engel, go, goal, son, sunny, Tom and Tooonnnnyyyy to your dictionary you should create a text file and place each of those words on it in order to look like this:
 
 > angel
 > 
